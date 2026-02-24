@@ -159,15 +159,37 @@
 
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-thumb { background: var(--kz-gold); border-radius: 10px; }
-        @media (max-width: 768px) {
-  /* Стили для мобильных устройств */
-  .gallery { 
+  @media (max-width: 768px) {
+  /* 1. Разворачиваем body в колонку и разрешаем прокрутку */
+  body {
+    flex-direction: column !important; 
+    height: auto !important; 
+    overflow-y: auto !important; 
+  }
+
+  /* 2. Меню теперь сверху на всю ширину */
+  .sidebar {
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+    padding: 20px !important;
+  }
+
+  /* 3. Контент занимает всю ширину и идет под меню */
+  .main-content {
+    width: 100% !important;
+    padding: 15px !important;
+    margin-left: 0 !important;
+  }
+
+  /* 4. Ваши настройки для галереи */
+  .gallery {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
   }
-  .card { 
-    width: 95% !important; 
+  .card {
+    width: 95% !important;
     margin: 10px 0;
   }
 }
@@ -339,4 +361,5 @@
     </script>
 </body>
 </html>
+
 
